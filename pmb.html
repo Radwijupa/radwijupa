@@ -1,386 +1,672 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>CV & Portfolio | Radwijupa Style</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>PMB 2026 | Pendaftaran Mahasiswa Baru</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Inter', sans-serif;
-            background: linear-gradient(145deg, #f6f9fc 0%, #eef2f5 100%);
-            color: #1a2c3e;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefcf5;
+      color: #1e2a3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        /* Header / Hero */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
-            transition: all 0.2s;
-        }
+    /* header / navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 252, 240, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #ffe6c7;
+      padding: 16px 0;
+    }
 
-        .hero-content {
-            flex: 2;
-        }
+    .nav-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
-        .hero-badge {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 1rem;
-            border-radius: 40px;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+      color: #c4450c;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #0f2b3d, #1e4a76);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
+    .logo i {
+      font-size: 2rem;
+      color: #e26d2c;
+    }
 
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: #2c5a7a;
-            margin-bottom: 1rem;
-            border-left: 4px solid #2c7da0;
-            padding-left: 1rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-        .hero-desc {
-            color: #2c3e4e;
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-        }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3e4e;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
 
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+    .nav-links a:hover {
+      color: #e26d2c;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.6rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-            background: white;
-            border: 1px solid #bdd3e6;
-            color: #1e4a76;
-        }
+    .btn-daftar-nav {
+      background: #e26d2c;
+      color: white !important;
+      padding: 8px 22px;
+      border-radius: 40px;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(226, 109, 44, 0.2);
+    }
 
-        .btn-primary {
-            background: #1e4a76;
-            border: none;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
+    .btn-daftar-nav:hover {
+      background: #c45518;
+      transform: translateY(-2px);
+    }
 
-        .btn-primary:hover {
-            background: #0f3554;
-            transform: translateY(-2px);
-        }
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
 
-        .btn-outline:hover {
-            background: #e9f0f5;
-            transform: translateY(-2px);
-        }
+    .hero-content {
+      flex: 1.2;
+    }
 
-        .hero-avatar {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+    .hero-badge {
+      background: #ffefe3;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c4450c;
+      margin-bottom: 24px;
+    }
 
-        .avatar-circle {
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(145deg, #cbdde9, #b0c8da);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 500;
-            color: #1e3a5f;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
-            border: 4px solid white;
-        }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1f2f3a;
+    }
 
-        /* section style */
-        .section {
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
+    .hero-highlight {
+      color: #e26d2c;
+      border-bottom: 3px solid #ffcf9a;
+    }
 
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            border-bottom: 4px solid #2c7da0;
-            padding-bottom: 0.25rem;
-        }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #4a5b6b;
+      margin-bottom: 32px;
+      max-width: 90%;
+    }
 
-        /* Grid */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
 
-        .info-card {
-            background: #f8fafc;
-            padding: 1.2rem;
-            border-radius: 1.2rem;
-            transition: all 0.2s;
-        }
+    .stat {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
 
-        .info-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: #0f2b3d;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #e26d2c;
+    }
 
-        .skill-tag {
-            display: inline-block;
-            background: #e2eaf1;
-            padding: 0.3rem 0.9rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin: 0.25rem;
-            color: #1e4a76;
-        }
+    .hero-image {
+      flex: 1;
+      background: linear-gradient(135deg, #fff1e0, #ffe6d0);
+      border-radius: 48px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+    }
 
-        .project-item {
-            border-left: 3px solid #2c7da0;
-            padding-left: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+    }
 
-        .project-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-        .project-meta {
-            font-size: 0.8rem;
-            color: #5f7f9a;
-            margin-bottom: 0.5rem;
-        }
+    .btn-primary {
+      background: #e26d2c;
+      color: white;
+      border: none;
+      padding: 14px 34px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 14px rgba(226, 109, 44, 0.3);
+    }
 
-        .timeline-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        .timeline-year {
-            min-width: 80px;
-            font-weight: 700;
-            color: #0369a1;
-        }
+    .btn-primary:hover {
+      background: #c45518;
+      transform: translateY(-3px);
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
-            color: #5c6f87;
-            font-size: 0.85rem;
-        }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e26d2c;
+      color: #e26d2c;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-        @media (max-width: 700px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .hero-tagline {
-                border-left: none;
-                text-align: center;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    .btn-outline:hover {
+      background: #e26d2c;
+      color: white;
+    }
+
+    /* section umum */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #5e727f;
+      max-width: 700px;
+      margin: 0 auto 48px auto;
+      font-size: 1.1rem;
+    }
+
+    /* jalur pendaftaran */
+    .jalur-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .jalur-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 24px;
+      flex: 1;
+      min-width: 240px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      transition: 0.25s ease;
+      border: 1px solid #ffecd9;
+    }
+
+    .jalur-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .jalur-icon {
+      font-size: 2.8rem;
+      background: #fff1e6;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 60px;
+      margin: 0 auto 20px;
+      color: #e26d2c;
+    }
+
+    .jalur-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .jalur-card p {
+      color: #5e6f7c;
+    }
+
+    /* jadwal */
+    .timeline {
+      background: #ffffffea;
+      border-radius: 48px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ffdec2;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      border-bottom: 1px solid #f5e2d0;
+      flex-wrap: wrap;
+    }
+
+    .timeline-date {
+      background: #fceae0;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      color: #c4450c;
+      min-width: 130px;
+      text-align: center;
+    }
+
+    .timeline-desc {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    /* form pendaftaran (popup modal) */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 48px;
+      padding: 32px;
+      position: relative;
+      animation: fadeUp 0.3s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #a18d7a;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 60px;
+      border: 1px solid #e2cfbc;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #e26d2c;
+      box-shadow: 0 0 0 3px rgba(226, 109, 44, 0.2);
+    }
+
+    .btn-submit {
+      background: #e26d2c;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 60px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .footer {
+      background: #1f2a33;
+      color: #cfdfed;
+      padding: 48px 0 24px;
+      text-align: center;
+    }
+
+    .footer .social {
+      margin: 20px 0;
+      font-size: 1.6rem;
+      gap: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer .social i {
+      margin: 0 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #ffcfaf;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-desc {
+        max-width: 100%;
+      }
+      .nav-flex {
+        flex-direction: column;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <!-- Hero Section -->
+
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      <span>UNIV PRESTASI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#jalur">Jalur PMB</a>
+      <a href="#jadwal">Jadwal</a>
+      <a href="#" id="openModalBtnNav" class="btn-daftar-nav">Daftar Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <div class="container">
     <div class="hero">
-        <div class="hero-content">
-            <div class="hero-badge"> ✨ Portofolio & CV </div>
-            <h1>Radit Wijaya</h1>
-            <div class="hero-tagline">Front-end Developer & Creative Technologist</div>
-            <p class="hero-desc">Membangun antarmuka yang intuitif dan performa tinggi. Berpengalaman dalam ekosistem web modern, desain responsif, dan kolaborasi tim kreatif.</p>
-            <div class="btn-group">
-                <a href="#" class="btn btn-primary">📄 Download CV</a>
-                <a href="#kontak" class="btn btn-outline">✉️ Hubungi Saya</a>
-                <a href="https://github.com/Radwijupa" class="btn btn-outline" target="_blank">🐙 GitHub</a>
-            </div>
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-calendar-alt"></i> Pendaftaran Gelombang 1 Dibuka!</div>
+        <h1>Raih Masa Depan Gemilang <br> <span class="hero-highlight">Bersama Kampus Unggulan</span></h1>
+        <p class="hero-desc">PMB 2026/2027 telah resmi dibuka. Dapatkan kesempatan beasiswa prestasi & akses fasilitas modern. Kuota terbatas!</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-number">20+</span> <span>Program Studi</span></div>
+          <div class="stat"><span class="stat-number">1.500+</span> <span>Mahasiswa Aktif</span></div>
+          <div class="stat"><span class="stat-number">92%</span> <span>Lulusan Terserap</span></div>
         </div>
-        <div class="hero-avatar">
-            <div class="avatar-circle">RW</div>
+        <div class="btn-group">
+          <button class="btn-primary" id="heroDaftarBtn"><i class="fas fa-pen-alt"></i> Daftar PMB</button>
+          <button class="btn-outline" id="infoBtn"><i class="fas fa-download"></i> Unduh Panduan</button>
         </div>
+      </div>
+      <div class="hero-image">
+        <!-- ilustrasi kampus -->
+        <i class="fas fa-university" style="font-size: 8rem; color: #e26d2c80;"></i>
+        <p style="margin-top: 12px; font-weight: 500;">Kampus berstandar internasional</p>
+      </div>
     </div>
+  </div>
 
-    <!-- Tentang & Detail -->
-    <div class="grid-2">
-        <div class="section">
-            <h2 class="section-title">📌 Tentang Saya</h2>
-            <p style="margin-bottom: 1rem;">Saya adalah pengembang web yang antusias menciptakan solusi digital minimalis namun fungsional. Memiliki ketertarikan pada UI/UX, aksesibilitas, dan performa website.</p>
-            <p>✨ <strong>Lokasi:</strong> Yogyakarta, Indonesia<br>
-            ✨ <strong>Pengalaman:</strong> 3+ tahun freelance & project based<br>
-            ✨ <strong>Status:</strong> Tersedia untuk kolaborasi / pekerjaan remote</p>
+  <!-- Tentang Section -->
+  <section id="tentang" style="background: #fffaf5;">
+    <div class="container">
+      <div class="section-title">Mengapa Memilih Kami?</div>
+      <div class="section-sub">Lingkungan akademik yang inspiratif, dosen profesional, dan koneksi industri luas</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 20px;">
+        <div style="flex:1; min-width: 200px; background: white; padding: 28px; border-radius: 32px; text-align: center;">
+          <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: #e26d2c;"></i>
+          <h3 style="margin: 16px 0 8px;">Pengajar Ahli</h3>
+          <p style="color: #4b5e6c;">Dosen praktisi dan akademisi handal</p>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">🧰 Keahlian Utama</h2>
-            <div>
-                <span class="skill-tag">HTML5 & CSS3</span>
-                <span class="skill-tag">JavaScript (ES6+)</span>
-                <span class="skill-tag">React.js</span>
-                <span class="skill-tag">Tailwind CSS</span>
-                <span class="skill-tag">Git & Github</span>
-                <span class="skill-tag">Figma to Code</span>
-                <span class="skill-tag">Responsive Design</span>
-                <span class="skill-tag">Node.js (Dasar)</span>
-            </div>
-            <div style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">🌐 Bahasa</h3>
-                <span class="skill-tag">Indonesia (native)</span>
-                <span class="skill-tag">Inggris (Profesional)</span>
-            </div>
+        <div style="flex:1; min-width: 200px; background: white; padding: 28px; border-radius: 32px; text-align: center;">
+          <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: #e26d2c;"></i>
+          <h3 style="margin: 16px 0 8px;">Lab Modern</h3>
+          <p style="color: #4b5e6c;">Fasilitas riset & digital terbaru</p>
         </div>
+        <div style="flex:1; min-width: 200px; background: white; padding: 28px; border-radius: 32px; text-align: center;">
+          <i class="fas fa-hand-holding-heart" style="font-size: 2.5rem; color: #e26d2c;"></i>
+          <h3 style="margin: 16px 0 8px;">Beasiswa Besar</h3>
+          <p style="color: #4b5e6c;">Prestasi, bidikmisi, dan karya</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Pengalaman Kerja -->
-    <div class="section">
-        <h2 class="section-title">💼 Pengalaman</h2>
-        <div class="timeline-item">
-            <div class="timeline-year">2023 - Sekarang</div>
-            <div><strong>Front-end Developer</strong> — Kreatif Studio<br><span style="font-size: 0.85rem; color:#4b6f8e;">Mengembangkan landing page, sistem komponen UI, dan optimasi performa web untuk klien enterprise.</span></div>
+  <!-- Jalur Pendaftaran -->
+  <section id="jalur">
+    <div class="container">
+      <div class="section-title">Jalur Penerimaan Mahasiswa Baru</div>
+      <div class="section-sub">Pilih jalur yang sesuai dengan prestasi dan minatmu</div>
+      <div class="jalur-grid">
+        <div class="jalur-card">
+          <div class="jalur-icon"><i class="fas fa-star"></i></div>
+          <h3>Jalur Prestasi</h3>
+          <p>Rapor, olimpiade, atau karya seni. Seleksi portofolio.</p>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-year">2021 - 2023</div>
-            <div><strong>Web Developer Freelance</strong> — Self-employed<br><span style="font-size: 0.85rem; color:#4b6f8e;">Mengerjakan berbagai proyek website portofolio, company profile, dan dashboard sederhana.</span></div>
+        <div class="jalur-card">
+          <div class="jalur-icon"><i class="fas fa-pen-fancy"></i></div>
+          <h3>Jalur UTBK</h3>
+          <p>Berdasarkan skor UTBK & ujian mandiri tertulis.</p>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-year">2020</div>
-            <div><strong>Magang UI/UX</strong> — Digilab ID<br><span style="font-size: 0.85rem; color:#4b6f8e;">Membantu pembuatan prototype dan user flow untuk aplikasi mobile.</span></div>
+        <div class="jalur-card">
+          <div class="jalur-icon"><i class="fas fa-globe"></i></div>
+          <h3>Jalur Kerjasama</h3>
+          <p>Rekomendasi mitra industri & sekolah binaan.</p>
         </div>
+        <div class="jalur-card">
+          <div class="jalur-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <h3>Beasiswa KIP</h3>
+          <p>Pendaftaran khusus penerima KIP Kuliah.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Proyek Unggulan (menyerupai struktur yang ada di repo: dcc.html, tulip.html, agemane.html) -->
-    <div class="section">
-        <h2 class="section-title">🚀 Proyek Unggulan</h2>
-        <div class="grid-2">
-            <div class="project-item">
-                <h4>🌷 Tulip Creative Hub</h4>
-                <div class="project-meta">HTML, CSS, JavaScript | 2025</div>
-                <p>Platform portofolio untuk kreator dengan galeri interaktif dan tema dinamis.</p>
-                <a href="#" style="color:#1e4a76; font-weight:500;">Live demo →</a>
-            </div>
-            <div class="project-item">
-                <h4>🤖 AgeMane - Tools Prediksi Usia</h4>
-                <div class="project-meta">API Integration, Tailwind, JS | 2025</div>
-                <p>Aplikasi web sederhana yang menebak usia berdasarkan nama menggunakan API publik.</p>
-                <a href="#" style="color:#1e4a76; font-weight:500;">Live demo →</a>
-            </div>
-            <div class="project-item">
-                <h4>📘 DCC Documentation</h4>
-                <div class="project-meta">Markdown, Vue.js | 2024</div>
-                <p>Sistem dokumentasi modern untuk tim developer dengan fitur pencarian cepat.</p>
-                <a href="#" style="color:#1e4a76; font-weight:500;">Live demo →</a>
-            </div>
-            <div class="project-item">
-                <h4>🎨 Portfolio Radwijupa v2</h4>
-                <div class="project-meta">CSS Grid, Animasi, Mobile-first</div>
-                <p>Desain portfolio personal dengan sentuhan modern dan aksesibilitas tinggi.</p>
-                <a href="#" style="color:#1e4a76; font-weight:500;">Lihat repo →</a>
-            </div>
-        </div>
+  <!-- Jadwal Penting -->
+  <section id="jadwal" style="background: #fff9f2;">
+    <div class="container">
+      <div class="section-title">📅 Jadwal Penting PMB 2026</div>
+      <div class="section-sub">Catat tanggal-tanggal berikut agar tidak ketinggalan informasi</div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-date">1 Feb - 30 Apr</div><div class="timeline-desc"><strong>Pendaftaran Gelombang 1</strong> (early bird + potongan biaya)</div></div>
+        <div class="timeline-item"><div class="timeline-date">1 Mei - 30 Jun</div><div class="timeline-desc"><strong>Pendaftaran Gelombang 2</strong> (ujian mandiri online)</div></div>
+        <div class="timeline-item"><div class="timeline-date">15 Juli</div><div class="timeline-desc"><strong>Pengumuman Hasil Seleksi</strong> (lolos & cadangan)</div></div>
+        <div class="timeline-item"><div class="timeline-date">25-30 Juli</div><div class="timeline-desc"><strong>Registrasi Ulang & Pengenalan Kampus</strong></div></div>
+        <div class="timeline-item"><div class="timeline-date">Agustus 2026</div><div class="timeline-desc"><strong>Perkuliahan Perdana</strong> – Tahun akademik baru dimulai!</div></div>
+      </div>
     </div>
+  </section>
 
-    <!-- Pendidikan & Sertifikat -->
-    <div class="grid-2">
-        <div class="section">
-            <h2 class="section-title">🎓 Pendidikan</h2>
-            <div><strong>📘 S1 Teknik Informatika</strong><br>Universitas Gadjah Mada (UGM) | 2018-2022<br>IPK 3.75/4.00</div>
-            <div style="margin-top: 1rem;"><strong>📜 Bootcamp Front-end Expert</strong><br>BuildWith Angga | 2023</div>
-        </div>
-        <div class="section">
-            <h2 class="section-title">🏆 Penghargaan & Sertifikat</h2>
-            <ul style="margin-left: 1.2rem; color:#2c3e4e;">
-                <li>Juara 2 Web Development Competition 2024</li>
-                <li>Sertifikat JavaScript Advanced (freeCodeCamp)</li>
-                <li>Responsive Web Design Certification - freeCodeCamp</li>
-            </ul>
-        </div>
+  <!-- Call to action / Biaya & Beasiswa -->
+  <section>
+    <div class="container" style="text-align: center;">
+      <div class="section-title">💰 Biaya Terjangkau & Beasiswa Melimpah</div>
+      <div class="section-sub">UKT berjenjang mulai 500rb - 4jt per semester. Tersedia 500+ kuota beasiswa prestasi, kurang mampu, dan bidikmisi.</div>
+      <button class="btn-primary" id="ctaDaftar" style="margin-top: 20px;"><i class="fas fa-check-circle"></i> Daftar Sekarang & Dapatkan Diskon</button>
     </div>
+  </section>
+</main>
 
-    <!-- Kontak & Media -->
-    <div class="section" id="kontak">
-        <h2 class="section-title">📫 Hubungi Saya</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center;">
-            <div>
-                <p>📧 <strong>Email:</strong> radit.wijaya@example.com</p>
-                <p>📱 <strong>Telepon:</strong> +62 812 3456 7890</p>
-                <p>🌐 <strong>Portfolio:</strong> radwijupa.vercel.app</p>
-            </div>
-            <div class="btn-group">
-                <a href="https://github.com/Radwijupa" class="btn btn-outline" target="_blank">GitHub</a>
-                <a href="#" class="btn btn-outline">LinkedIn</a>
-                <a href="#" class="btn btn-outline">Instagram</a>
-            </div>
-        </div>
-        <hr style="margin: 1.5rem 0; border-color: #e2edf2;">
-        <p style="font-size: 0.85rem; text-align: center;">💬 Siap untuk berkolaborasi atau menerima proyek menarik. Jangan ragu untuk mengirim pesan!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="logo" style="justify-content: center; color: #ffcfaf;"><i class="fas fa-graduation-cap"></i> UNIV PRESTASI</div>
+    <p style="margin-top: 16px;">Kampus Inovasi dan Karakter | Jl. Pendidikan No. 45, Kota Metropolis</p>
+    <div class="social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-youtube"></i>
     </div>
+    <p style="font-size: 0.8rem;">&copy; 2026 Penerimaan Mahasiswa Baru. Semua Hak Dilindungi.</p>
+  </div>
+</footer>
 
-    <footer>
-        © 2026 Radit Wijaya — Terinspirasi dari repository Radwijupa/radwijupa | Built with ♥ and simplicity
-    </footer>
+<!-- Modal Form Pendaftaran -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeModalBtn">&times;</span>
+    <h2 style="margin-bottom: 20px;">Formulir Pendaftaran PMB</h2>
+    <p style="margin-bottom: 20px; color:#5b6f7e;">Isi data berikut untuk mendaftar sebagai calon mahasiswa baru.</p>
+    <form id="pmbForm">
+      <div class="form-group">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email Aktif" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder="Nomor WhatsApp" required>
+      </div>
+      <div class="form-group">
+        <select id="jalurPilih" required>
+          <option value="">Pilih Jalur Pendaftaran</option>
+          <option>Jalur Prestasi</option>
+          <option>Jalur UTBK</option>
+          <option>Jalur Kerjasama</option>
+          <option>Beasiswa KIP</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit"><i class="fas fa-arrow-right"></i> Kirim Pendaftaran</button>
+    </form>
+    <p style="font-size: 0.75rem; margin-top: 20px; text-align: center;">*Pendaftar akan dihubungi oleh tim PMB maksimal 2x24 jam</p>
+  </div>
 </div>
+
+<script>
+  // Modal handling
+  const modal = document.getElementById('registerModal');
+  const openModalBtns = document.querySelectorAll('#openModalBtnNav, #heroDaftarBtn, #ctaDaftar');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  function openModal() {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  openModalBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeModalBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // form submit sederhana
+  const form = document.getElementById('pmbForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const jalur = document.getElementById('jalurPilih').value;
+    if (!nama || !email || !phone || !jalur) {
+      alert('Harap lengkapi semua data pendaftaran!');
+      return;
+    }
+    // simulasi sukses
+    alert(`Terima kasih ${nama}, pendaftaran PMB melalui jalur ${jalur} telah kami terima. Petugas akan menghubungi ${phone} / ${email}.`);
+    closeModal();
+    form.reset();
+  });
+
+  // info button (download panduan simulasi)
+  const infoBtn = document.getElementById('infoBtn');
+  if(infoBtn) {
+    infoBtn.addEventListener('click', () => {
+      alert('📘 Panduan PMB 2026 (PDF) : Segera hubungi 0812-3456-7890 atau unduh di laman resmi. Untuk demo, silakan hubungi panitia.');
+    });
+  }
+
+  // smooth scrolling untuk anchor link
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
 </body>
 </html>
